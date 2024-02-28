@@ -1,1 +1,1 @@
-# rockpaperscissors
+My first JavaScript project with TOP - an implementation of rock paper scissors game.
