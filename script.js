@@ -30,6 +30,31 @@ let playRound = function(playerSelection, computerSelection) {
         return "player wins"
     }
 }
-const playerSelection = "rock"
-const computerSelection = getComputerChoice()
-console.log(playRound(playerSelection, computerSelection))
+// const playerSelection = "scissors"
+// const computerSelection = getComputerChoice()
+// console.log(playRound(playerSelection, computerSelection))
+
+// let roundResult = playRound(playerSelection, computerSelection)
+
+let playGame = function(){
+    let scorePlayer = 0
+    let scoreComputer = 0
+    
+    for(let i = 0; i < 5; i++){
+        const playerSelection = prompt("Enter rock, paper or scissors")
+        const computerSelection = getComputerChoice()
+        const roundResult = playRound(playerSelection, computerSelection)
+    
+        if(roundResult === "player wins"){
+            scorePlayer++
+        } else if(roundResult === "computer wins"){
+            scoreComputer++
+        }
+        console.log(`Round ${i + 1}: ${roundResult}`)
+    }
+    if(scorePlayer > scoreComputer){
+        console.log("Player is the winner")
+    } else {
+        console.log("Computer is the winner")
+    }
+}
