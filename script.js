@@ -10,24 +10,14 @@ let getComputerChoice = function(){
 
 let playRound = function(playerSelection, computerSelection) {
     let playerSelection2 = playerSelection.toLowerCase()
-    if(playerSelection2 === "rock" && computerSelection === "rock"){
+    if(playerSelection2 === computerSelection){
         return "tie"
-    } else if(playerSelection2 === "paper" && computerSelection === "paper"){
-        return "tie"
-    } else if(playerSelection2 === "scissors" && computerSelection === "scissors"){
-        return "tie"
-    } else if(playerSelection2 === "rock" && computerSelection === "paper"){
-        return "computer wins"
-    } else if(playerSelection2 === "rock" && computerSelection === "scissors"){
+    } else if(
+        (playerSelection2 === "rock" && computerSelection === "scissors") || (playerSelection2 === "paper" && computerSelection === "rock") || (playerSelection2 === "scissors" && computerSelection === "paper")
+    ) {
         return "player wins"
-    } else if(playerSelection2 === "paper" && computerSelection === "rock"){
-        return "player wins"
-    } else if(playerSelection2 === "paper" && computerSelection === "scissors"){
+    } else {
         return "computer wins"
-    } else if(playerSelection2 === "scissors" && computerSelection === "rock"){
-        return "computer wins"
-    } else if(playerSelection2 === "scissors" && computerSelection === "paper"){
-        return "player wins"
     }
 }
 // const playerSelection = "scissors"
@@ -58,3 +48,4 @@ let playGame = function(){
         console.log("Computer is the winner")
     }
 }
+playGame()
