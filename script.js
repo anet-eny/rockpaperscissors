@@ -3,28 +3,27 @@ let choices = ["rock", "paper", "scissors"]
 let getComputerChoice = function(){
     let computerChoice = Math.floor(Math.random() * 3)
     return choices[computerChoice]
+} 
+
+let isValid = function(selection){
+    const validChoices = ["rock", "paper", "scissors"]
+    return validChoices.includes(selection.toLowerCase())
 }
 
-// let computerSelection = getComputerChoice()
-// console.log(computerSelection) 
-
 let playRound = function(playerSelection, computerSelection) {
-    let playerSelection2 = playerSelection.toLowerCase()
-    if(playerSelection2 === computerSelection){
+    if(!isValid(playerSelection)){
+        return "Invalid input. Please enter rock, paper or scissors."
+    }
+    if(playerSelection === computerSelection){
         return "tie"
     } else if(
-        (playerSelection2 === "rock" && computerSelection === "scissors") || (playerSelection2 === "paper" && computerSelection === "rock") || (playerSelection2 === "scissors" && computerSelection === "paper")
+        (playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")
     ) {
         return "player wins"
     } else {
         return "computer wins"
     }
 }
-// const playerSelection = "scissors"
-// const computerSelection = getComputerChoice()
-// console.log(playRound(playerSelection, computerSelection))
-
-// let roundResult = playRound(playerSelection, computerSelection)
 
 let playGame = function(){
     let scorePlayer = 0
