@@ -5,10 +5,10 @@ let getComputerChoice = function(){
     return choices[computerChoice]
 } 
 
-let isValid = function(selection){
-    const validChoices = ["rock", "paper", "scissors"]
-    return validChoices.includes(selection.toLowerCase())
-}
+// let isValid = function(selection){
+//     const validChoices = ["rock", "paper", "scissors"]
+//     return validChoices.includes(selection.toLowerCase())
+// }
 
 let playRound = function(playerSelection, computerSelection) {
     if(!isValid(playerSelection)){
