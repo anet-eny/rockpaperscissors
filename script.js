@@ -11,9 +11,7 @@ let getComputerChoice = function(){
 // }
 
 let playRound = function(playerSelection, computerSelection) {
-    if(!isValid(playerSelection)){
-        return "Invalid input. Please enter rock, paper or scissors."
-    }
+    
     if(playerSelection === computerSelection){
         return "tie"
     } else if(
