@@ -5,10 +5,7 @@ let getComputerChoice = function(){
     return choices[computerChoice]
 } 
 
-// let isValid = function(selection){
-//     const validChoices = ["rock", "paper", "scissors"]
-//     return validChoices.includes(selection.toLowerCase())
-// }
+
 
 let playRound = function(playerSelection, computerSelection) {
     
@@ -27,18 +24,18 @@ let playGame = function(){
     let scorePlayer = 0
     let scoreComputer = 0
     
-    for(let i = 0; i < 5; i++){
-        const playerSelection = prompt("Enter rock, paper or scissors")
-        const computerSelection = getComputerChoice()
-        const roundResult = playRound(playerSelection, computerSelection)
+   
+    // const playerSelection = prompt("Enter rock, paper  or scissors")
+    const computerSelection = getComputerChoice()
+    const roundResult = playRound(playerSelection, computerSelection)
     
-        if(roundResult === "player wins"){
-            scorePlayer++
-        } else if(roundResult === "computer wins"){
-            scoreComputer++
-        }
-        console.log(`Round ${i + 1}: ${roundResult}`)
+    if(roundResult === "player wins"){
+        scorePlayer++
+    } else if(roundResult === "computer wins"){
+        scoreComputer++
     }
+    console.log(`Result: ${roundResult}`)
+    
     if(scorePlayer > scoreComputer){
         console.log("Player is the winner")
     } else {
