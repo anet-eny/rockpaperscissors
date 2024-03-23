@@ -7,25 +7,9 @@ let getComputerChoice = function(){
 
 let playerChoice = ""
 
-let chooseRock = function(){
-    playerChoice = "rock"
-    console.log("Player choice:rock")
-}
-let choosePaper = function(){
-    playerChoice = "paper"
-    console.log("Player choice:paper")
-}
-let chooseScissors = function(){
-    playerChoice = "scissors"
-    console.log("Player choice:scissors")
-}
-
-document.querySelector(".btnRock").addEventListener("click", chooseRock)
-document.querySelector(".btnPaper").addEventListener("click", choosePaper)
-document.querySelector(".btnScissors").addEventListener("click", chooseScissors)
-
-
-let playRound = function(playerSelection, computerSelection) {
+let playRound = function() {
+    let computerSelection = getComputerChoice()
+    let playerSelection = playerChoice
     
     if(playerSelection === computerSelection){
         return "tie"
@@ -38,29 +22,50 @@ let playRound = function(playerSelection, computerSelection) {
     }
 }
 
+document.querySelector(".btnRock").addEventListener("click", function(){
+    playerChoice = "rock"
+    console.log("player:rock")
+    console.log(playRound())
+})
+document.querySelector(".btnPaper").addEventListener("click", function(){
+    playerChoice = "paper"
+    console.log("player:paper")
+    console.log(playRound())
+})
+document.querySelector(".btnScissors").addEventListener("click", function(){
+    playerChoice = "scissors"
+    console.log("player:scissors")
+    console.log(playRound())
+})
+   
+
+    
 
 
 
-let playGame = function(){
-    let scorePlayer = 0
-    let scoreComputer = 0
+
+
+
+// let playGame = function(){
+//     let scorePlayer = 0
+//     let scoreComputer = 0
     
     
-    const playerSelection = playerChoice
-    const computerSelection = getComputerChoice()
-    const roundResult = playRound(playerSelection, computerSelection)
+//     const playerSelection = playerChoice
+//     const computerSelection = getComputerChoice()
+//     const roundResult = playRound(playerSelection, computerSelection)
     
-    if(roundResult === "player wins"){
-        scorePlayer++
-    } else if(roundResult === "computer wins"){
-        scoreComputer++
-    }
-    console.log(`Result: ${roundResult}`)
+//     if(roundResult === "player wins"){
+//         scorePlayer++
+//     } else if(roundResult === "computer wins"){
+//         scoreComputer++
+//     }
+//     console.log(`Result: ${roundResult}`)
     
-    if(scorePlayer > scoreComputer){
-        console.log("Player is the winner")
-    } else {
-        console.log("Computer is the winner")
-    }
-}
-playGame()
+//     if(scorePlayer > scoreComputer){
+//         console.log("Player is the winner")
+//     } else {
+//         console.log("Computer is the winner")
+//     }
+// }
+// playGame()
