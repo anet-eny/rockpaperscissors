@@ -11,6 +11,23 @@ let playRound = function() {
     let computerSelection = getComputerChoice()
     let playerSelection = playerChoice
     
+    let pComputer = document.querySelector(".h1-computer p")
+    if (!pComputer){
+        pComputer = document.createElement("p")
+        document.querySelector(".h1-computer").appendChild(pComputer)
+    }
+    pComputer.textContent = computerSelection
+
+    
+    let pPlayer = document.querySelector(".h1-player p")
+    if (!pPlayer){
+        pPlayer = document.createElement("p")
+        document.querySelector(".h1-player").appendChild(pPlayer)
+    }
+    pPlayer.textContent = playerSelection
+    
+
+
     if(playerSelection === computerSelection){
         return "tie"
     } else if(
@@ -20,6 +37,8 @@ let playRound = function() {
     } else {
         return "computer wins"
     }
+
+    
 }
 
 document.querySelector(".btnRock").addEventListener("click", function(){
