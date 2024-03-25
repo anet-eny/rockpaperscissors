@@ -41,20 +41,24 @@ let playRound = function() {
     
 }
 
+let result = document.querySelector(".results p")
+    if (!result){
+        result = document.createElement("p")
+        document.querySelector(".results").appendChild(result)
+    } 
+
+
 document.querySelector(".btnRock").addEventListener("click", function(){
     playerChoice = "rock"
-    console.log("player:rock")
-    console.log(playRound())
+    result.textContent = playRound()
 })
 document.querySelector(".btnPaper").addEventListener("click", function(){
     playerChoice = "paper"
-    console.log("player:paper")
-    console.log(playRound())
+    result.textContent = playRound()
 })
 document.querySelector(".btnScissors").addEventListener("click", function(){
     playerChoice = "scissors"
-    console.log("player:scissors")
-    console.log(playRound())
+    result.textContent = playRound()
 })
    
 
