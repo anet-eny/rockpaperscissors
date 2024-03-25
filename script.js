@@ -51,44 +51,41 @@ let result = document.querySelector(".results p")
 document.querySelector(".btnRock").addEventListener("click", function(){
     playerChoice = "rock"
     result.textContent = playRound()
+    playGame()
 })
 document.querySelector(".btnPaper").addEventListener("click", function(){
     playerChoice = "paper"
     result.textContent = playRound()
+    playGame()
 })
 document.querySelector(".btnScissors").addEventListener("click", function(){
     playerChoice = "scissors"
     result.textContent = playRound()
+    playGame()
 })
    
+let scorePlayer = 0
+let scoreComputer = 0
 
-    
-
-
-
-
-
-
-// let playGame = function(){
-//     let scorePlayer = 0
-//     let scoreComputer = 0
+let playGame = function(){
     
     
-//     const playerSelection = playerChoice
-//     const computerSelection = getComputerChoice()
-//     const roundResult = playRound(playerSelection, computerSelection)
+    const roundResult = playRound()
     
-//     if(roundResult === "player wins"){
-//         scorePlayer++
-//     } else if(roundResult === "computer wins"){
-//         scoreComputer++
-//     }
-//     console.log(`Result: ${roundResult}`)
-    
-//     if(scorePlayer > scoreComputer){
-//         console.log("Player is the winner")
-//     } else {
-//         console.log("Computer is the winner")
-//     }
-// }
-// playGame()
+    if(roundResult === "player wins"){
+        scorePlayer++
+    } else if(roundResult === "computer wins"){
+        scoreComputer++
+    }
+    console.log(roundResult)
+    if(scorePlayer === 5){
+        console.log("player wins the game")
+        scorePlayer = 0
+        scoreComputer = 0
+    } else if(scoreComputer === 5){
+        console.log("computer wins the game")
+        scorePlayer = 0
+        scoreComputer = 0
+    }
+}
+
