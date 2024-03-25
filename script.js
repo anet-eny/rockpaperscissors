@@ -78,14 +78,33 @@ let playGame = function(){
         scoreComputer++
     }
     console.log(roundResult)
+
+    let score = document.querySelector(".score p")
+    if (!score){
+        score = document.createElement("p")
+        document.querySelector(".score").appendChild(score)
+    } 
+    score.textContent = `Player: ${scorePlayer}/5 Computer: ${scoreComputer}/5 `
+
+    let gameResult = document.querySelector("score p")
+    if (!gameResult){
+        gameResult = document.createElement("p")
+        document.querySelector(".score").appendChild(gameResult)
+    }
+
     if(scorePlayer === 5){
         console.log("player wins the game")
+        gameResult.textContent = "Player wins the game"
         scorePlayer = 0
         scoreComputer = 0
+        
     } else if(scoreComputer === 5){
         console.log("computer wins the game")
+        gameResult.textContent = "Computer wins the game"
         scorePlayer = 0
         scoreComputer = 0
+        
     }
+    
 }
 
