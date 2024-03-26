@@ -6,7 +6,7 @@ let updateScoreDisplay = function(){
     let scoreDisplay = document.querySelector(".score p")
     if(!scoreDisplay){
         scoreDisplay = document.createElement("p")
-        document.querySelector("p").appendChild(scoreDisplay)
+        document.querySelector(".score").appendChild(scoreDisplay)
     }
     scoreDisplay.textContent = `Player: ${scorePlayer}/5 Computer: ${scoreComputer}/5`
 }
@@ -21,8 +21,6 @@ let playRound = function(playerSelection) {
         pComputer = document.createElement("p")
         document.querySelector(".h1-computer").appendChild(pComputer)
     }
-    
-
     
     let pPlayer = document.querySelector(".h1-player p")
     if (!pPlayer){
