@@ -8,9 +8,9 @@ let playRound = function() {
     const computerSelection = choices[Math.floor(Math.random() * 3)]
     let playerSelection = playerChoice
     
-    let pComputer = document.querySelector(".h1-computer p")
+    const pComputer = document.querySelector(".h1-computer p")
     if (!pComputer){
-        pComputer = document.createElement("p")
+        const pComputer = document.createElement("p")
         document.querySelector(".h1-computer").appendChild(pComputer)
     }
     pComputer.textContent = computerSelection
