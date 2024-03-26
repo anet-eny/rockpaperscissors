@@ -16,19 +16,21 @@ let playRound = function(playerSelection) {
     const computerSelection = choices[Math.floor(Math.random() * 3)]
     
     
-    const pComputer = document.querySelector(".h1-computer p")
+    let pComputer = document.querySelector(".h1-computer p")
     if (!pComputer){
-        const pComputer = document.createElement("p")
+        pComputer = document.createElement("p")
         document.querySelector(".h1-computer").appendChild(pComputer)
     }
-    pComputer.textContent = computerSelection
+    
 
     
-    const pPlayer = document.querySelector(".h1-player p")
+    let pPlayer = document.querySelector(".h1-player p")
     if (!pPlayer){
-        const pPlayer = document.createElement("p")
+        pPlayer = document.createElement("p")
         document.querySelector(".h1-player").appendChild(pPlayer)
     }
+    
+    pComputer.textContent = computerSelection
     pPlayer.textContent = playerSelection
     
 
@@ -46,13 +48,6 @@ let playRound = function(playerSelection) {
     
 }
 
-// let result = document.querySelector(".results p")
-//     if (!result){
-//         result = document.createElement("p")
-//         document.querySelector(".results").appendChild(result)
-//     } 
-
-
 
 document.querySelector(".btnRock").addEventListener("click", function(){
     const result = playRound("rock")
@@ -61,6 +56,7 @@ document.querySelector(".btnRock").addEventListener("click", function(){
     } else if(result === "computer wins") {
         scoreComputer++
     }
+    updateScoreDisplay()
 })
 document.querySelector(".btnPaper").addEventListener("click", function(){
     const result = playRound("paper")
@@ -69,6 +65,7 @@ document.querySelector(".btnPaper").addEventListener("click", function(){
     } else if(result === "computer wins") {
         scoreComputer++
     }
+    updateScoreDisplay()
 })
 document.querySelector(".btnScissors").addEventListener("click", function(){
     const result = playRound("scissors")
@@ -77,6 +74,7 @@ document.querySelector(".btnScissors").addEventListener("click", function(){
     } else if(result === "computer wins") {
         scoreComputer++
     }
+    updateScoreDisplay()
 })
    
 
