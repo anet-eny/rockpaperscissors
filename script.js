@@ -11,6 +11,23 @@ let updateScoreDisplay = function(){
     scoreDisplay.textContent = `Player: ${scorePlayer}/5 Computer: ${scoreComputer}/5`
 }
 
+let updateRoundResult = function(result){
+    let roundResult = document.querySelector(".results p")
+    if(!roundResult){
+        roundResult = document.createElement("p")
+        document.querySelector(".results").appendChild(roundResult)
+    }
+    if(result === "player wins"){
+        roundResult.textContent = "Player wins this round"
+    } else if (result === "computer wins") {
+        roundResult.textContent = "Computer wins this round"
+    } else if (result === "tie") {
+        roundResult.textContent = "Tie"
+    } else {
+        roundResult.textContent = ""
+    }
+}
+
 
 let playRound = function(playerSelection) {
     const computerSelection = choices[Math.floor(Math.random() * 3)]
@@ -55,6 +72,7 @@ document.querySelector(".btnRock").addEventListener("click", function(){
         scoreComputer++
     }
     updateScoreDisplay()
+    updateRoundResult(result)
 })
 document.querySelector(".btnPaper").addEventListener("click", function(){
     const result = playRound("paper")
@@ -64,6 +82,7 @@ document.querySelector(".btnPaper").addEventListener("click", function(){
         scoreComputer++
     }
     updateScoreDisplay()
+    updateRoundResult(result)
 })
 document.querySelector(".btnScissors").addEventListener("click", function(){
     const result = playRound("scissors")
@@ -73,6 +92,7 @@ document.querySelector(".btnScissors").addEventListener("click", function(){
         scoreComputer++
     }
     updateScoreDisplay()
+    updateRoundResult(result)
 })
    
 
