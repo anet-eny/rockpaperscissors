@@ -1,5 +1,15 @@
 let choices = ["rock", "paper", "scissors"]
+let scorePlayer = 0
+let scoreComputer = 0
 
+let updateScoreDisplay = function(){
+    let scoreDisplay = document.querySelector(".score p")
+    if(!scoreDisplay){
+        scoreDisplay = document.createElement("p")
+        document.querySelector("p").appendChild(scoreDisplay)
+    }
+    scoreDisplay.textContent = `Player: ${scorePlayer}/5 Computer: ${scoreComputer}/5`
+}
 
 
 let playRound = function(playerSelection) {
@@ -42,8 +52,7 @@ let playRound = function(playerSelection) {
 //         document.querySelector(".results").appendChild(result)
 //     } 
 
-let scorePlayer = 0
-let scoreComputer = 0
+
 
 document.querySelector(".btnRock").addEventListener("click", function(){
     const result = playRound("rock")
