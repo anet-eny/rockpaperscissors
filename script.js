@@ -1,14 +1,11 @@
 let choices = ["rock", "paper", "scissors"]
 
-let getComputerChoice = function(){
-    let computerChoice = Math.floor(Math.random() * 3)
-    return choices[computerChoice]
-} 
+
 
 let playerChoice = ""
 
 let playRound = function() {
-    let computerSelection = getComputerChoice()
+    const computerSelection = choices[Math.floor(Math.random() * 3)]
     let playerSelection = playerChoice
     
     let pComputer = document.querySelector(".h1-computer p")
@@ -67,6 +64,7 @@ document.querySelector(".btnScissors").addEventListener("click", function(){
 let scorePlayer = 0
 let scoreComputer = 0
 
+
 let playGame = function(){
     
     
@@ -86,9 +84,10 @@ let playGame = function(){
     } 
     score.textContent = `Player: ${scorePlayer}/5 Computer: ${scoreComputer}/5 `
 
-    let gameResult = document.querySelector("score p")
+    let gameResult = document.querySelector("score p.game-result")
     if (!gameResult){
         gameResult = document.createElement("p")
+        gameResult.classList.add("game-result")
         document.querySelector(".score").appendChild(gameResult)
     }
 
@@ -98,12 +97,15 @@ let playGame = function(){
         scorePlayer = 0
         scoreComputer = 0
         
+
     } else if(scoreComputer === 5){
         console.log("computer wins the game")
         gameResult.textContent = "Computer wins the game"
         scorePlayer = 0
         scoreComputer = 0
         
+    } else {
+        gameResult.textContent = ""
     }
     
 }
