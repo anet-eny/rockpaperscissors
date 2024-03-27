@@ -11,6 +11,11 @@ let updateScoreDisplay = function(){
     scoreDisplay.textContent = `Player: ${scorePlayer}/5 Computer: ${scoreComputer}/5`
 }
 
+let startNewGame = function(){
+    scorePlayer = 0
+    scoreComputer = 0
+}
+
 let updateRoundResult = function(result){
     let roundResult = document.querySelector(".results p")
     if(!roundResult){
@@ -20,12 +25,14 @@ let updateRoundResult = function(result){
     if(result === "player wins"){
         if(scorePlayer === 5) {
             roundResult.textContent = "Player wins the game"
+            startNewGame()
         } else {
             roundResult.textContent = "Player wins this round"
         }
     } else if (result === "computer wins") {
         if(scoreComputer === 5) {
             roundResult.textContent = "Computer wins the game"
+            startNewGame()
         } else {
             roundResult.textContent = "Computer wins this round"
         }    
