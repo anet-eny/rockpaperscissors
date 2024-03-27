@@ -18,9 +18,17 @@ let updateRoundResult = function(result){
         document.querySelector(".results").appendChild(roundResult)
     }
     if(result === "player wins"){
-        roundResult.textContent = "Player wins this round"
+        if(scorePlayer === 5) {
+            roundResult.textContent = "Player wins the game"
+        } else {
+            roundResult.textContent = "Player wins this round"
+        }
     } else if (result === "computer wins") {
-        roundResult.textContent = "Computer wins this round"
+        if(scoreComputer === 5) {
+            roundResult.textContent = "Computer wins the game"
+        } else {
+            roundResult.textContent = "Computer wins this round"
+        }    
     } else if (result === "tie") {
         roundResult.textContent = "Tie"
     } else {
