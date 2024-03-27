@@ -73,11 +73,8 @@ let playRound = function(playerSelection) {
         return "player wins"
     } else {
         return "computer wins"
-    }
-
-    
+    }  
 }
-
 
 document.querySelector(".btnRock").addEventListener("click", function(){
     const result = playRound("rock")
@@ -112,48 +109,4 @@ document.querySelector(".btnScissors").addEventListener("click", function(){
    
 
 
-// let playGame = function(){
-    
-    
-//     const roundResult = playRound()
-    
-//     if(roundResult === "player wins"){
-//         scorePlayer++
-//     } else if(roundResult === "computer wins"){
-//         scoreComputer++
-//     }
-//     console.log(roundResult)
-
-//     let score = document.querySelector(".score p")
-//     if (!score){
-//         score = document.createElement("p")
-//         document.querySelector(".score").appendChild(score)
-//     } 
-//     score.textContent = `Player: ${scorePlayer}/5 Computer: ${scoreComputer}/5 `
-
-//     let gameResult = document.querySelector("score p.game-result")
-//     if (!gameResult){
-//         gameResult = document.createElement("p")
-//         gameResult.classList.add("game-result")
-//         document.querySelector(".score").appendChild(gameResult)
-//     }
-
-//     if(scorePlayer === 5){
-//         console.log("player wins the game")
-//         gameResult.textContent = "Player wins the game"
-//         scorePlayer = 0
-//         scoreComputer = 0
-        
-
-//     } else if(scoreComputer === 5){
-//         console.log("computer wins the game")
-//         gameResult.textContent = "Computer wins the game"
-//         scorePlayer = 0
-//         scoreComputer = 0
-        
-//     } else {
-//         gameResult.textContent = ""
-//     }
-    
-// }
 
