@@ -43,7 +43,6 @@ let updateRoundResult = function(result){
     }
 }
 
-
 let playRound = function(playerSelection) {
     const computerSelection = choices[Math.floor(Math.random() * 3)]
     
@@ -63,8 +62,6 @@ let playRound = function(playerSelection) {
     pComputer.textContent = computerSelection
     pPlayer.textContent = playerSelection
     
-
-
     if(playerSelection === computerSelection){
         return "tie"
     } else if(
