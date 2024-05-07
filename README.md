@@ -1,6 +1,7 @@
 # Rock, Paper, Scissors Game
 
-This is a simple implementation of the classic game "Rock, Paper, Scissors" using JavaScript. In this game, the player competes against the computer by choosing one of three options: rock, paper, or scissors. The winner of each round is determined based on the rules of the game: rock crushes scissors, scissors cuts paper, and paper covers rock.
+This is a simple implementation of the classic game "Rock, Paper, Scissors" using JavaScript. In this game, the player competes against the computer by choosing one of three options: rock, paper, or scissors. The winner of each round is determined based on the rules of the game: rock crushes scissors, scissors cuts paper, and paper covers rock. This project was created as part of The Odin Project curriculum.
+
 
 ## Features
 
