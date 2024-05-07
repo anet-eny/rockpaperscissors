@@ -23,7 +23,7 @@ To play the game, simply click on one of the buttons representing your choice: r
 
 ## How to Run
 
-You can play the game directly in your web browser by opening the `index.html` file in your preferred browser. No additional installations or setups are required.
+https://anet-eny.github.io/rockpaperscissors/
 
 ## Credits
 
